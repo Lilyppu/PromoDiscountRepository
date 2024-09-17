@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Data
 public class DiscountDetailCompKey  implements Serializable{
-	private String DisdCode;	
+	private String disdCode;	
 
-	private Integer DisdSeqNo;
+	private Integer disdSeqNo;
 }

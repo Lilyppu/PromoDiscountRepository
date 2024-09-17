@@ -3,7 +3,7 @@ package com.PromoDiscount.Models;
 import java.math.BigDecimal;
 import java.util.Date;
 
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,37 +24,39 @@ public class DiscountDetail {
 
 	@Id
 	@Column(name="so_dis_code",length=20,  nullable = false)
-	private String DisdCode;	
+	private String disdCode;	
 
 	@Id
 	@Column(name="so_seq_no",  nullable = false)
-	private Integer DisdSeqNo;
+	private Integer disdSeqNo;
 	
 	@Column(name="so_dis_beg")
-	private BigDecimal DisdBeg;
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private Date disdBeg;
 	
 	@Column(name="so_dis_end")
-	private BigDecimal DisdEnd;
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private Date disdEnd;
 	
 	@Column(name="so_disc_pct")
-	private BigDecimal DisdPct;
+	private BigDecimal disdPct;
 	
 	@Column(name="so_disc_amt")
-	private BigDecimal DisdAmount;
+	private BigDecimal disdAmount;
 	
 	@Column(name="so_status",length=2)
-	private String DisdStatus;	
+	private String disdStatus;	
 	
 	@Column(name="so_user_cre",length=15)
-	private String DisdUserCre;
+	private String disdUserCre;
 	
 	@Column(name="so_date_cre")
-	private Date DisdDatecreate;
+	private Date disdDatecreate;
 	
 	@Column(name="so_user_upd",length=15)
-	private String DisdUserUpd;
+	private String disdUserUpd;
 	
 	@Column(name="so_date_upd")
-	private Date DisdDateUpdt;
+	private Date disdDateUpdt;
 	
 }

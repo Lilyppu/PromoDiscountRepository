@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 import com.PromoDiscount.Models.DiscountMaster;
 import com.PromoDiscount.Repository.IDiscountMasterRepository;
@@ -18,5 +20,14 @@ public class ServiceDiscountMaster {
 	
 	public List<DiscountMaster> getDiscMasterList(){
 		return repoDism.findAll();
+	}
+	
+	public Optional<DiscountMaster> getDiscMasterSingle(String pcode){
+		return repoDism.findByDismCode(pcode);
+	}
+	
+	public String saveUpdateDiscMaster( DiscountMaster discmaster) {
+		repoDism.save(discmaster);
+		return "Submit Successfully";
 	}
 }

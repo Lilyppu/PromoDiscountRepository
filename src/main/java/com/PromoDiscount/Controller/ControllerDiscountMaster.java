@@ -21,5 +21,16 @@ public class ControllerDiscountMaster {
 	public List<DiscountMaster> getDiscMasterList(){
 		return servDisM.getDiscMasterList();
 	}
+	
+	@GetMapping("/discount/getdiscmastersingle")
+	public Optional<DiscountMaster> getDiscMasterSingle(String pcode){
+		return servDisM.getDiscMasterSingle(pcode);
+	}
+	
+	@PostMapping("/discount/savediscmaster")
+	public String saveUpdateDiscMaster(@RequestBody DiscountMaster discmaster) {
+		return servDisM.saveUpdateDiscMaster(discmaster);
+		
+	}
 
 }

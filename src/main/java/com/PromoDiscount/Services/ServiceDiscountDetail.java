@@ -1,5 +1,6 @@
 package com.PromoDiscount.Services;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,5 +22,23 @@ public class ServiceDiscountDetail {
 	public List<DiscountDetail> getDiscDtlAll(){
 		return reporDisd.findAll();
 	}
+	
+	public Optional<DiscountDetail> getDiscDtlSingle(String code, Integer seq) {		
+		return reporDisd.findByDisdCodeAndDisdSeqNo(code, seq);		
+	}
+	
+	public String SaveDiscountDetail(DiscountDetail ddt) {
+		reporDisd.save(ddt);
+		return "Submit Successfully";		
+	}
+	
+	public String runUpdDiscDtl(String p_code, String p_seq, 
+			String sodisbeg , String sodisend , BigDecimal sodisamount, BigDecimal sodispct , 
+			String status, String userid , String p_msg) {
+		
+		return reporDisd.runUpdateDiscDtl(p_code, p_seq, sodisbeg, sodisend, sodisamount, sodispct, status, userid, p_msg);
+	}
+	
+	
 	
 }

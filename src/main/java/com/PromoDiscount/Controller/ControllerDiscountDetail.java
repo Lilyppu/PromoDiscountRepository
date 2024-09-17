@@ -1,5 +1,6 @@
 package com.PromoDiscount.Controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,5 +24,24 @@ public class ControllerDiscountDetail {
 	public List<DiscountDetail> getDiscDtlAll(){
 		return servDisd.getDiscDtlAll();
 	}
+	
+	@GetMapping("/discount/getdiscdetailSingle")
+	public Optional<DiscountDetail> getDiscDtlSingle(String code, Integer seq) {		
+		return servDisd.getDiscDtlSingle(code, seq);
+	}
+	
+	@PostMapping("/discount/savediscountdtl")
+	public String SaveDiscountDetail(@RequestBody DiscountDetail ddt) {
+		return servDisd.SaveDiscountDetail(ddt)	;
+	}
+	
+	@PostMapping("/discount/updatedisdtl")
+	public String runUpdateJournal(String p_code, String p_seq, 
+			String sodisbeg , String sodisend , BigDecimal sodisamount, BigDecimal sodispct , 
+			String status, String userid , String p_msg) {
+		
+		return servDisd.runUpdDiscDtl(p_code, p_seq, sodisbeg, sodisend, sodisamount, sodispct, status, userid, p_msg);
+	}
+	
 	
 }
