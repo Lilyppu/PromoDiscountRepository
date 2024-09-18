@@ -21,8 +21,8 @@ public class ControllerDiscountDetail {
 	ServiceDiscountDetail servDisd;
 	
 	@GetMapping("/discount/getdiscdetailall")
-	public List<DiscountDetail> getDiscDtlAll(){
-		return servDisd.getDiscDtlAll();
+	public List<DiscountDetail> getDiscDtlAll(String pcode){
+		return servDisd.getDiscDtlAll(pcode);
 	}
 	
 	@GetMapping("/discount/getdiscdetailSingle")

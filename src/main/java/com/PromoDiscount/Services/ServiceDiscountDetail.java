@@ -19,8 +19,8 @@ public class ServiceDiscountDetail {
 	@Autowired
 	IDiscountDetailRepository reporDisd;
 	
-	public List<DiscountDetail> getDiscDtlAll(){
-		return reporDisd.findAll();
+	public List<DiscountDetail> getDiscDtlAll(String pcode){
+		return reporDisd.findByDisdCode(pcode);
 	}
 	
 	public Optional<DiscountDetail> getDiscDtlSingle(String code, Integer seq) {		

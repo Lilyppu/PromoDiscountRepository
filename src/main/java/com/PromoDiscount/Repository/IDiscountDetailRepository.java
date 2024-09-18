@@ -14,7 +14,11 @@ import com.PromoDiscount.Models.DiscountDetailCompKey;
 import com.PromoDiscount.Models.DiscountMaster;
 
 @Repository
+
 public interface IDiscountDetailRepository  extends JpaRepository<DiscountDetail, DiscountDetailCompKey> {
+
+	public List<DiscountDetail> findByDisdCode(String code);
+	
  public Optional<DiscountDetail> findByDisdCodeAndDisdSeqNo(String code, Integer seq);
  
  @Procedure(procedureName = "p_update_discdetail")
