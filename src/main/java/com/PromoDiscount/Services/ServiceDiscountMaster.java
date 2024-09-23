@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.PromoDiscount.Models.DiscountMaster;
 import com.PromoDiscount.Repository.IDiscountMasterRepository;
 
-
-
 @Service
 public class ServiceDiscountMaster {
 	@Autowired

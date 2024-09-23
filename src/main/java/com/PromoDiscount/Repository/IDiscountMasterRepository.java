@@ -14,4 +14,7 @@ import com.PromoDiscount.Models.DiscountMaster;
 public interface IDiscountMasterRepository extends JpaRepository<DiscountMaster,String>{
 	
 	public Optional<DiscountMaster> findByDismCode(String discode);
+
+	
+	public List<DiscountMaster> findByDismFor (String vfor);
 }
