@@ -27,6 +27,12 @@ public class ControllerDiscountMaster {
 		return servDisM.getDiscMasterSingle(pcode);
 	}
 	
+	@GetMapping("/discount/getdiscmasterfor")
+	public List<DiscountMaster> getPromoFor(String vfor){
+		return servDisM.getPromoFor(vfor);
+	}
+	
+	
 	@PostMapping("/discount/savediscmaster")
 	public String saveUpdateDiscMaster(@RequestBody DiscountMaster discmaster) {
 		return servDisM.saveUpdateDiscMaster(discmaster);

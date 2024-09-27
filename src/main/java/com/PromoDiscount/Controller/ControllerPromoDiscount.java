@@ -29,10 +29,10 @@ public class ControllerPromoDiscount {
 	public Optional<PromoDiscount> getPromoDiscSingle (String discode, Integer seq) {
 		return servDisp.getPromoDiscSingle(discode, seq);
 	}
-	
-	
+		
 	@PostMapping("/discount/savepromodiscount")
 	public String SaveDiscountDetail(@RequestBody PromoDiscount ddt) {
+		System.out.println("bbb");
 		return servDisp.SavePromoDiscount(ddt);
 	}
 }

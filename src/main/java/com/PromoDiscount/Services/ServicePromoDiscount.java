@@ -27,6 +27,7 @@ public class ServicePromoDiscount {
 	}
 	
 	public String SavePromoDiscount(PromoDiscount pd) {
+		System.out.println("aaaa");
 		repoDisp.save(pd);
 		return "Submit Successfully";		
 	}
