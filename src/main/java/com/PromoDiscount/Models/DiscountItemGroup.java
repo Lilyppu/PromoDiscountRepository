@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 public class DiscountItemGroup {
 
 	@Id
-	@Column(name="so_disc_code",length=20,  nullable = false)
+	@Column(name="so_dis_code",length=20,  nullable = false)
 	private String digrCode;
 	
 	@Id

@@ -15,5 +15,11 @@ import com.PromoDiscount.Models.DiscountItemGroupCompKey;
 
 @Repository
 public interface IDiscountItemGroupRepository  extends JpaRepository<DiscountItemGroup,DiscountItemGroupCompKey>{
-		public List<DiscountItemGroup> findByDigrCodeAndDigrSeq (String vcode, Integer vseq);
+		public Optional<DiscountItemGroup> findByDigrCodeAndDigrSeq (String vcode, Integer vseq);
+		
+		public List<DiscountItemGroup> findByDigrCode (String vcode);
+		
+		@Procedure(procedureName = "p_update_itemgroup")
+		public String runUpdateItemGroup(String p_code, Integer p_seq , String itgroup , 
+				String status, String userid, String outmsg);
 }

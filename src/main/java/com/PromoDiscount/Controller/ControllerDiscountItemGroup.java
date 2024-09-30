@@ -19,8 +19,19 @@ public class ControllerDiscountItemGroup {
 	ServiceDiscountItemGroup servDigr;
 	
 	@GetMapping("/discount/getdiscitemgroup")
-	public List<DiscountItemGroup> getItemGroupAll (String vcode, Integer vseq){
-		return servDigr.getItemGroupAll(vcode, vseq);
+	public Optional<DiscountItemGroup> getItemGroupAll (String vcode, Integer vseq){
+		return servDigr.getItemGroupCU(vcode, vseq);
+	}
+	
+	@GetMapping("/discount/updateitemgroup")
+	public String UpdateItemGroup (String p_code, Integer p_seq , String itgroup , 
+			String status, String userid, String msg) {
+		return servDigr.UpdateItemGroup(p_code, p_seq, itgroup, status, userid, msg);	
+	}
+	
+	@GetMapping("/discount/getdiscitemgrouplist")
+	public List<DiscountItemGroup> getItemGroupList (String vcode){
+		return servDigr.getItemGroupList(vcode);
 	}
 	
 	@PostMapping("/discount/savediscitemgroup")
