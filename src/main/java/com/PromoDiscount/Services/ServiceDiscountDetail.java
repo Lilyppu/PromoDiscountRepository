@@ -12,8 +12,6 @@ import com.PromoDiscount.Models.DiscountMaster;
 import com.PromoDiscount.Repository.IDiscountDetailRepository;
 import com.PromoDiscount.Repository.IDiscountMasterRepository;
 
-
-
 @Service
 public class ServiceDiscountDetail {
 	@Autowired

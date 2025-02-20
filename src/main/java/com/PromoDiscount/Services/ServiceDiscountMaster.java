@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 import com.PromoDiscount.Models.DiscountMaster;
+import com.PromoDiscount.Models.PromoDiscount;
 import com.PromoDiscount.Repository.IDiscountMasterRepository;
-
-
 
 @Service
 public class ServiceDiscountMaster {
@@ -24,6 +23,10 @@ public class ServiceDiscountMaster {
 	
 	public Optional<DiscountMaster> getDiscMasterSingle(String pcode){
 		return repoDism.findByDismCode(pcode);
+	}
+	
+	public List<DiscountMaster> getPromoFor(String vfor){
+		return repoDism.findByDismFor(vfor);
 	}
 	
 	public String saveUpdateDiscMaster( DiscountMaster discmaster) {

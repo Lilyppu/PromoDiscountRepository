@@ -14,7 +14,6 @@ import com.PromoDiscount.Models.DiscountDetailCompKey;
 import com.PromoDiscount.Models.DiscountMaster;
 
 @Repository
-
 public interface IDiscountDetailRepository  extends JpaRepository<DiscountDetail, DiscountDetailCompKey> {
 
 	public List<DiscountDetail> findByDisdCode(String code);
